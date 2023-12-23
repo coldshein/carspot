@@ -4,11 +4,9 @@ import { Combobox, Transition } from "@headlessui/react";
 import Image from "next/image";
 import { useState } from "react";
 import { manufacturers } from "@/constants/constants";
+import { ISearchManufacturer } from "@/types";
 
-export interface ISearchManufacturer {
-  manufacturer: string;
-  setManufacturer: (manufacturer: string) => void;
-}
+
 
 const SearchManufacturer = ({
   manufacturer,

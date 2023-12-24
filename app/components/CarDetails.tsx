@@ -62,7 +62,7 @@ const CarDetails = ({ isOpen, closeModal, car }: ICarDetail) => {
                       />
                     </div>
                   </div>
-                  <div className="flex gap-3 mt-3">
+                  <div className="flex gap-3 mt-3 px-3">
                     <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                       <Image
                         src={generateCarImageUrl(car, '29')}

@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import Image from "next/image";
-import { calculateCarRent } from "@/utils";
+import { calculateCarRent, generateCarImageUrl } from "@/utils";
 import { Button } from "@radix-ui/themes";
 import CarDetails from "./CarDetails";
 import { ICars } from "@/types";
@@ -30,7 +30,7 @@ const CarCard = ({ car }: ICarCard) => {
       </p>
       <div className="relative w-full h-40 my-3 object-contain">
         <Image
-          src="/hero.png"
+          src={generateCarImageUrl(car)}
           alt="car model"
           fill
           priority
@@ -41,7 +41,7 @@ const CarCard = ({ car }: ICarCard) => {
         <div className="flex group-hover:invisible w-full justify-between text-gray">
           <div className="flex flex-col justify-center items-center gap-2">
             <Image
-              src="/steering-wheel.svg"
+              src='/steering-wheel.svg'
               width={20}
               height={20}
               alt="steering wheel"

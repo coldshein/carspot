@@ -1,3 +1,4 @@
+import { manufacturers } from './../constants/constants';
 export interface ICars {
     city_mpg: number;
     class: string;
@@ -15,4 +16,12 @@ export interface ICars {
 export interface ISearchManufacturer {
   manufacturer: string;
   setManufacturer: (manufacturer: string) => void;
+}
+
+export interface IFilters {
+  manufacturer: string,
+  year: number,
+  fuel: string,
+  limit: number,
+  model: string,
 }

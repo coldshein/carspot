@@ -1,8 +1,7 @@
 import { ICars, IFilters } from "@/types";
 
 export const fetchCars = async (filters: IFilters) => {
-
-  const {manufacturer, year, model, limit, fuel} = filters;
+  const { manufacturer, year, model, limit, fuel } = filters;
   const headers = {
     "X-RapidAPI-Key": "f5c99340d1msh259ec7fa7efbfcfp12a475jsnf8b3b1e2f6ff",
     "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
@@ -49,13 +48,14 @@ export const generateCarImageUrl = (car: ICars, angle?: string) => {
   const url = new URL("https://cdn.imagin.studio/getimage");
   const { make, model, year } = car;
 
-  url.searchParams.append('customer', 'hrjavascript-mastery');
-  url.searchParams.append('make', make);
-  url.searchParams.append('modelFamily', model.split(" ")[0]);
-  url.searchParams.append('zoomType', 'fullscreen');
-  url.searchParams.append('modelYear', `${year}`);
+  url.searchParams.append("customer", "hrjavascript-mastery");
+  url.searchParams.append("make", make);
+  url.searchParams.append("modelFamily", model.split(" ")[0]);
+  url.searchParams.append("zoomType", "fullscreen");
+  url.searchParams.append("modelYear", `${year}`);
   // url.searchParams.append('zoomLevel', zoomLevel);
-  url.searchParams.append('angle', `${angle}`);
+  url.searchParams.append("angle", `${angle}`);
 
   return `${url}`;
-} 
+};
+

@@ -4,8 +4,10 @@ import CustomFilter from "./components/CustomFilter";
 import SearchBar from "./components/SearchBar";
 import { fetchCars } from "@/utils";
 import CarCard from "./components/CarCard";
+import { fuels, yearsOfProduction } from "@/constants/constants";
+import ShowMore from "./components/ShowMore";
 
-export default async function Home({searchParams}) {
+export default async function Home({ searchParams }: any) {
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
@@ -26,8 +28,8 @@ export default async function Home({searchParams}) {
         <div className="home__filters">
           <SearchBar />
           <div className="home__filter-container">
-            <CustomFilter />
-            <CustomFilter />
+            <CustomFilter title="fuel" options={fuels} />
+            <CustomFilter title="year" options={yearsOfProduction} />
           </div>
         </div>
         {!isDataEmpty ? (
@@ -37,6 +39,7 @@ export default async function Home({searchParams}) {
                 <CarCard car={car} key={index} />
               ))}
             </div>
+            <ShowMore pageNumber={(searchParams.limit || 10) / 10} isNext={(searchParams.limit || 10) > allCars.length}/>
           </section>
         ) : (
           <div className="home__error-container">

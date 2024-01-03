@@ -25,3 +25,17 @@ export interface IFilters {
   limit: number,
   model: string,
 }
+
+export interface IOptionsProps{
+  title: string;
+  value: string
+}
+
+export interface ICustomfilter {
+  title: string,
+  options: IOptionsProps[]
+}
+export interface IShowMore {
+  pageNumber : number,
+  isNext: boolean
+}
